@@ -20,14 +20,18 @@ pub extern "C" fn _start() -> ! {
     }*/
 
     // the linker look for _start
-    vga_buffer::print_something;
-    vga_buffer::WRITER.lock().write_str("Hello String").unwrap();
-    write!(vga_buffer::WRITER.lock(), ", some numbers: {} {} ", 42, 1.0/3.0).unwrap();
+    //vga_buffer::print_something;
+    //vga_buffer::WRITER.lock().write_str("Hello String").unwrap();
+    //write!(vga_buffer::WRITER.lock(), ", some numbers: {} {} ", 42, 1.0/3.0).unwrap();
+
+    println!("Hello world{}", "!");
 
     loop {}
 }
 
 #[panic_handler]
 fn panic(_info: &PanicInfo) -> ! {
+    println!("{}", _info);
+
     loop {}
 }
