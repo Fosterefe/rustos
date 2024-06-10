@@ -1,4 +1,5 @@
 use core::fmt;
+use volatile;
 use volatile::Volatile;
 
 #[allow(dead_code)]
